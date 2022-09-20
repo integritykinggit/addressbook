@@ -18,7 +18,7 @@ pipeline {
         }
         stage ('send mail') {
             steps {
-               mail bcc: '', body: 'This build is finished', cc: '', from: '', replyTo: '', subject: 'This is build mail', to: 'integrityking007@gmail.com'
+              mail bcc: '', body: 'This is build finished', cc: '', from: '', replyTo: '', subject: 'This is build mail', to: 'freeman4christ007@gmail.com'
             }
         }
     }
