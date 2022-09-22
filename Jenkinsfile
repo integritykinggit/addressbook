@@ -1,7 +1,5 @@
 pipeline {
-    agent {
-         label 'tomcat'
-    }
+    agent { label 'tomcat'}
     stages {
         stage ('compilation') {
             steps {
