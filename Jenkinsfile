@@ -1,7 +1,7 @@
 pipeline {
     agent {
-  label 'tomcat'
-}
+         label 'tomcat'
+    }
     stages {
         stage ('compilation') {
             steps {
@@ -23,5 +23,5 @@ pipeline {
                mail bcc: '', body: 'This build is successful', cc: '', from: '', replyTo: '', subject: 'This is building email', to: 'integrityking007@gmail.com'
             }
         }
-   }    
+     }    
 } 
