@@ -3,17 +3,25 @@ pipeline {
     stages {
         stage ('compilation') {
             steps {
-                sh 'echo Hello dear. this is a compilation'
+  //              sh 'echo Hello dear. this is a compilation'
+                sh 'mvn -B compile'
             }
         }
-        stage ('deployment') {
+        stage ('static code analysis') {
             steps {
-               sh 'echo Hello dear. this is a deployment'
+  //           sh 'echo Hello dear. this is a deployment'
+                sh 'sonar-scanner'
             }
         }
-        stage ('finalize') {
+        stage ('package') {
             steps {
-               sh 'echo Hello dear. this is a finalize'
+  //            sh 'echo Hello dear. this is a finalize'
+                sh 'mvn -B package'
+            }
+        stage ('deploy tomcat') {
+            steps {
+ //              sh 'echo Hello dear. this is a finalize'
+                sh 'cp .
             }
         }
      }
