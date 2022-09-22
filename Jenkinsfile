@@ -10,7 +10,7 @@ pipeline {
         stage ('static code analysis') {
             steps {
   //           sh 'echo Hello dear. this is a deployment'
-                sh 'sonar-scanner'
+                sh '/home/ubuntu/sonar-scanner-4.7.0.2747-linux/bin/sonar-scanner'
             }
         }
         stage ('package') {
@@ -21,7 +21,7 @@ pipeline {
         stage ('deploy tomcat') {
             steps {
  //              sh 'echo Hello dear. this is a finalize'
-                sh 'cp .
+                sh 'cp ./target/addressbook-2.0.war var/lib/tomcat9/webapps/addressbook.war' 
             }
         }
      }
